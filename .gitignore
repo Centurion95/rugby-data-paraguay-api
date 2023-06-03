@@ -1,0 +1,16 @@
+# Dependencias
+/node_modules
+
+# Archivos generados en el momento de la construcción
+/build
+/dist
+
+# Archivos de configuración específicos del entorno
+.env
+
+# Archivos y carpetas generados por editores de texto y sistemas operativos
+*.log
+*.log.*
+*.swp
+.DS_Store
+Thumbs.db
