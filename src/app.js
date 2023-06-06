@@ -13,9 +13,15 @@ app.use(express.json())
 
 // Import routes
 const continentesRouter = require('./routes/continentesRouter')
+const paisesRouter = require('./routes/paisesRouter')
+const estadosRouter = require('./routes/estadosRouter')
+const ciudadesRouter = require('./routes/ciudadesRouter')
 
 // Route middleware
 app.use("/api/continentes", continentesRouter)
+app.use("/api/paises", paisesRouter)
+app.use("/api/estados", estadosRouter)
+app.use("/api/ciudades", ciudadesRouter)
 
 app.get('/*', (req, res) => {
   res.status(404).send()
