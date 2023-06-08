@@ -266,7 +266,7 @@ exports.ejecutar = async () => {
     gender: 'M',
     id_identifier_type: cedula_py._id,
     identifier_number: '4331001',
-    id_country_birth: paraguay._id,
+    id_country: paraguay._id,
   }).save()
   const person_1 = await new person({
     name: 'person_1',
@@ -274,7 +274,7 @@ exports.ejecutar = async () => {
     gender: 'F',
     id_identifier_type: cedula_py._id,
     identifier_number: '4987654',
-    id_country_birth: argentina._id,
+    id_country: argentina._id,
   }).save()
   const person_2 = await new person({
     name: 'person_2',
@@ -282,7 +282,7 @@ exports.ejecutar = async () => {
     gender: 'M',
     id_identifier_type: cedula_py._id,
     identifier_number: '3127998',
-    id_country_birth: brasil._id,
+    id_country: brasil._id,
   }).save()
   const person_3 = await new person({
     name: 'person_3',
@@ -290,7 +290,7 @@ exports.ejecutar = async () => {
     gender: 'M',
     id_identifier_type: cedula_py._id,
     identifier_number: '4311689',
-    id_country_birth: paraguay._id,
+    id_country: paraguay._id,
   }).save()
 
 

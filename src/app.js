@@ -16,12 +16,23 @@ const continentesRouter = require('./routes/continentesRouter')
 const paisesRouter = require('./routes/paisesRouter')
 const estadosRouter = require('./routes/estadosRouter')
 const ciudadesRouter = require('./routes/ciudadesRouter')
+const clubesRouter = require('./routes/clubesRouter')
+
+const tiposContactoRouter = require('./routes/tiposContactoRouter')
+const tiposIdentificadorRouter = require('./routes/tiposIdentificadorRouter')
+const personasRouter = require('./routes/personasRouter')
 
 // Route middleware
 app.use("/api/continentes", continentesRouter)
 app.use("/api/paises", paisesRouter)
 app.use("/api/estados", estadosRouter)
 app.use("/api/ciudades", ciudadesRouter)
+app.use("/api/clubes", clubesRouter)
+
+app.use("/api/tipos_contacto", tiposContactoRouter)
+app.use("/api/tipos_identificador", tiposIdentificadorRouter)
+app.use("/api/personas", personasRouter)
+
 
 app.get('/*', (req, res) => {
   res.status(404).send()

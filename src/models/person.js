@@ -20,13 +20,13 @@ const thisSchema = new mongoose.Schema({
     id_identifier_type: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'IdentifierType'
+        ref: 'Identifier_Type'
     },
     identifier_number: {
         type: String,
         required: true,
     },
-    id_country_birth: {
+    id_country: {
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Country'

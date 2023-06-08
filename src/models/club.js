@@ -10,11 +10,11 @@ const thisSchema = new mongoose.Schema({
     required: true,
     ref: 'City'
   },
-  id_region: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: 'Region'
-  },
+  // id_region: {
+  //   type: mongoose.Schema.Types.ObjectId,
+  //   required: true,
+  //   ref: 'Region'
+  // },
   gps_location: {
     type: String,
     trim: true
