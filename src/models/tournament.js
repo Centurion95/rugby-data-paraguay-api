@@ -1,39 +1,43 @@
 const mongoose = require('mongoose')
 const thisSchema = new mongoose.Schema({
-    name: {
-        type: String,
-        required: true,
-        trim: true
-    },
-    id_sport: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Sport'
-    },
-    id_country: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'Country'
-    },
-    date_from: {
-        type: Date,
-        default: null
-    },
-    date_to: {
-        type: Date,
-        default: null
-    },
-    archived: {
-        type: Boolean,
-        default: false
-    },
-    archivedAt: {
-        type: Date,
-        // default: Date.now
-        default: null
-    }
+  year: {
+    type: Number,
+    required: true,
+  },
+  name: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  // id_sport: {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     required: true,
+  //     ref: 'Sport'
+  // },
+  // id_country: {
+  //     type: mongoose.Schema.Types.ObjectId,
+  //     required: true,
+  //     ref: 'Country'
+  // },
+  date_from: {
+    type: Date,
+    default: null
+  },
+  date_to: {
+    type: Date,
+    default: null
+  },
+  archived: {
+    type: Boolean,
+    default: false
+  },
+  archivedAt: {
+    type: Date,
+    // default: Date.now
+    default: null
+  }
 }, {
-    timestamps: true
+  timestamps: true
 })
 
 // thisSchema.pre('save', async function (next) {

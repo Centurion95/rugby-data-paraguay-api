@@ -21,6 +21,9 @@ const clubesRouter = require('./routes/clubesRouter')
 const tiposContactoRouter = require('./routes/tiposContactoRouter')
 const tiposIdentificadorRouter = require('./routes/tiposIdentificadorRouter')
 const personasRouter = require('./routes/personasRouter')
+const jugadoresRouter = require('./routes/jugadoresRouter')
+const torneosRouter = require('./routes/torneosRouter')
+const torneoDetallesRouter = require('./routes/torneoDetallesRouter')
 
 // Route middleware
 app.use("/api/continentes", continentesRouter)
@@ -32,6 +35,10 @@ app.use("/api/clubes", clubesRouter)
 app.use("/api/tipos_contacto", tiposContactoRouter)
 app.use("/api/tipos_identificador", tiposIdentificadorRouter)
 app.use("/api/personas", personasRouter)
+app.use("/api/jugadores", jugadoresRouter)
+
+app.use("/api/torneos", torneosRouter)
+app.use("/api/torneo_detalles", torneoDetallesRouter)
 
 
 app.get('/*', (req, res) => {

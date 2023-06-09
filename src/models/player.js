@@ -10,13 +10,9 @@ const thisSchema = new mongoose.Schema({
         required: true,
         ref: 'Club'
     },
-    date_from: {
-        type: Date,
-        default: null
-    },
-    date_to: {
-        type: Date,
-        default: null
+    year: {
+        type: Number,
+        required: true,
     },
     archived: {
         type: Boolean,

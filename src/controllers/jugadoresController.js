@@ -1,13 +1,12 @@
-const Collection = require('../models/person')
+const Collection = require('../models/player')
 
 const thisController = {
   get_all: async (req, res) => {
     try {
-      //rc95 05/06/2023 23:46 - populate with ref-model name...
       const documents = await Collection
         .find({ archived: false })
-        .populate('id_country', 'name')
-        .populate('id_identifier_type', 'name')
+        .populate('id_person', 'name identifier_number')
+        .populate('id_club', 'name')
         .exec()
 
       res.status(200).send(documents)
@@ -29,7 +28,7 @@ const thisController = {
     }
   },
   insert_one: async (req, res) => {
-    req.body.birthDate = new Date(req.body.birthDate).toISOString()
+    // req.body.birthDate = new Date(req.body.birthDate).toISOString()
     const document = new Collection({ ...req.body })
     try {
       await document.save()
@@ -44,7 +43,7 @@ const thisController = {
     }
 
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['name', 'birthDate', 'gender', 'id_identifier_type', 'identifier_number', 'id_country', 'archived', 'archivedAt']
+    const allowedUpdates = ['name', 'id_person', 'id_club', 'year', 'archived', 'archivedAt']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
     if (!isValidOperation) {
       return res.status(404).send({ error: 'Invalid fields update!' })
@@ -80,20 +79,6 @@ const thisController = {
   //         res.status(500).send(error)
   //     }
   // },
-  get_one_by_identifier_number: async (req, res) => {
-    const identifier_number = req.query.identifier_number
-    try {
-      // const document = await Collection.findOne({ _id, id_user: req.user._id })
-      const document = await Collection.findOne({ identifier_number })
-      if (!document) {
-        const result = { encontrado: false }
-        return res.status(200).send(result)
-      }
-      res.status(200).send(document)
-    } catch (error) {
-      res.status(500).send(error)
-    }
-  },
 }
 
 module.exports = thisController 
