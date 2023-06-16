@@ -1,12 +1,11 @@
-const Collection = require('../models/country')
+const Collection = require('../models/stadium')
 
 const thisController = {
   get_all: async (req, res) => {
     try {
-      //rc95 05/06/2023 23:46 - populate with ref-model name...
       const documents = await Collection
         .find({ archived: false })
-        .populate('id_continent', 'name')
+        .populate('id_owner', 'name')
         .sort({ name: 1 })
         .exec()
 
@@ -31,7 +30,7 @@ const thisController = {
   insert_one: async (req, res) => {
     const document = new Collection({
       ...req.body,
-      id_continent: req.body.fk_id,
+      id_owner: req.body.fk_id,
     })
     try {
       await document.save()
@@ -46,12 +45,12 @@ const thisController = {
     }
 
     if (req.body.fk_id !== undefined) {
-      req.body = { ...req.body, id_continent: req.body.fk_id }
+      req.body = { ...req.body, id_owner: req.body.fk_id }
       delete req.body.fk_id //eliminamos el atributo de pasamano..
     }
 
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['name', 'archived', 'archivedAt', 'id_continent']
+    const allowedUpdates = ['name', 'archived', 'archivedAt', 'id_owner']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
     if (!isValidOperation) {
       return res.status(404).send({ error: 'Invalid fields update!' })

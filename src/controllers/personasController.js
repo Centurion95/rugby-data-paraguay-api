@@ -8,6 +8,7 @@ const thisController = {
         .find({ archived: false })
         .populate('id_country', 'name')
         .populate('id_identifier_type', 'name')
+        .sort({ name: 1 })
         .exec()
 
       res.status(200).send(documents)

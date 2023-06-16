@@ -7,6 +7,7 @@ const thisController = {
       const documents = await Collection
         .find({ archived: false })
         .populate('id_country', 'name')
+        .sort({ name: 1 })
         .exec()
 
       res.status(200).send(documents)

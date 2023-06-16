@@ -5,11 +5,6 @@ const thisSchema = new mongoose.Schema({
         required: true,
         trim: true
     },
-    id_city: {
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'City'
-    },
     id_owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Club'

@@ -5,9 +5,18 @@ const thisSchema = new mongoose.Schema({
     required: true,
     ref: 'Club'
   },
+  round: {
+    type: Number,
+    // required: true,
+  },
   order_number: {
     type: Number,
     // required: true,
+  },
+  id_stadium: {
+    type: mongoose.Schema.Types.ObjectId,
+    // required: true,
+    ref: 'Stadium'
   },
   id_local_team: {
     type: mongoose.Schema.Types.ObjectId,

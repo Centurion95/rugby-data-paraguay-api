@@ -4,7 +4,10 @@ const thisController = {
   get_all: async (req, res) => {
     try {
       // const documents = await Collection.find({}) //all
-      const documents = await Collection.find({ archived: false }) //unarchived only
+      const documents = await Collection
+        .find({ archived: false })
+        .sort({ name: 1 })
+
       res.status(200).send(documents)
     } catch (error) {
       res.status(500).send()

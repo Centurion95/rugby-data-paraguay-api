@@ -3,8 +3,10 @@ const Collection = require('../models/match')
 const thisController = {
   get_all: async (req, res) => {
     try {
+      const id_tournament = req.query.id_tournament
       const documents = await Collection
-        .find({ archived: false })
+        .find({ archived: false, id_tournament })
+        .populate('id_stadium', 'name')
         .populate('id_local_team', 'name')
         .populate('id_visiting_team', 'name')
         .sort({ order_number: 1 })
@@ -29,6 +31,9 @@ const thisController = {
     }
   },
   insert_one: async (req, res) => {
+    if (req.body.id_stadium === '') delete req.body.id_stadium
+    if (req.body.date === '') delete req.body.date
+
     const document = new Collection({
       ...req.body,
     })
@@ -40,12 +45,26 @@ const thisController = {
     }
   },
   update_one_by_id: async (req, res) => {
+    if (req.body.id_stadium === '') delete req.body.id_stadium
+    if (req.body.date === '') delete req.body.date
+
     if (req.body.archived) { //si es para archivar, guardamos la fecha/hora actual..
       req.body = { ...req.body, archivedAt: new Date() }
     }
 
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['year', 'name', 'archived', 'archivedAt']
+    const allowedUpdates = [
+      'id_tournament',
+      'round',
+      'order_number',
+      'id_stadium',
+      'id_local_team',
+      'id_visiting_team',
+      'date',
+      'local_team_final_score',
+      'visiting_team_final_score',
+      'archived',
+      'archivedAt']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
     if (!isValidOperation) {
       return res.status(404).send({ error: 'Invalid fields update!' })
