@@ -1,4 +1,4 @@
-const { getCurrentDateTime } = require('../../utils/utils')
+const { getCurrentDateTime } = require('../utils/utils')
 exports.ejecutar = async () => {
 
   console.log(getCurrentDateTime() + ` *** Vamos a empezar a poblar la BD..`)
@@ -319,7 +319,7 @@ exports.ejecutar = async () => {
 
   //rc95 28/09/2022 22:27 - player
   const player = require('../models/player')
-  const fichaje_4331001 = await new player({ id_person: rodrigo_centurion._id, id_club: curda._id }).save()
+  const fichaje_4331001 = await new player({ id_person: rodrigo_centurion._id, id_club: curda._id, year: 2023 }).save()
 
 
   //rc95 28/09/2022 22:24 - staff_role
@@ -349,164 +349,165 @@ exports.ejecutar = async () => {
 
   //rc95 28/09/2022 22:59 - tournament
   const tournament = require('../models/tournament')
-  const tournament_1 = await new tournament({ name: 'Torneo Oficial 2022 - Primera', id_sport: rugby._id, id_country: paraguay._id }).save()
-  const tournament_2 = await new tournament({ name: 'Torneo clausura 2022', id_sport: rugby._id, id_country: paraguay._id }).save()
-  const tournament_3 = await new tournament({ name: 'Torneo apertura 2022', id_sport: rugby._id, id_country: paraguay._id }).save()
+  const tournament_1 = await new tournament({ name: 'Torneo Oficial 2022 - Primera', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_2 = await new tournament({ name: 'Torneo clausura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_3 = await new tournament({ name: 'Torneo apertura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
 
 
   //rc95 28/09/2022 23:07 - match
-  const match = require('../models/match')
-  const tournament_1_final = await new match({
-    order_number: 999,
-    id_local_team: san_jose._id,
-    id_visiting_team: curda._id,
-    date: '2022-09-10 17:30',
-    local_team_final_score: 13,
-    visiting_team_final_score: 21,
-    // local_team_points_earned: 3,
-    // visiting_team_points_earned: 0,
-  }).save()
-
-  const tournament_1_1 = await new match({
-    order_number: 10,
-    id_local_team: curda._id,
-    id_visiting_team: luque_rugby._id,
-    date: '2022-09-03 00:00',
-    local_team_final_score: 62,
-    visiting_team_final_score: 14,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
-  const tournament_1_2 = await new match({
-    order_number: 9,
-    id_local_team: san_jose._id,
-    id_visiting_team: arc._id,
-    date: '2022-09-03 00:00',
-    local_team_final_score: 34,
-    visiting_team_final_score: 14,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
-
-
-
-
-  // const tournament_1_4_3 = await new match({
-  //     order_number: 7,
-  //     id_local_team: san_jose._id,
-  //     id_visiting_team: arc._id,
-  //     date: '2022-07-16 16:30',
-  //     stadium: cancha_luque._id,
-  //     local_team_final_score: ?,
-  //     visiting_team_final_score: ?,
-  //     local_team_points_earned: ?,
-  //     visiting_team_points_earned: ?,
-  // }).save()
-
-  const tournament_1_4_2 = await new match({
-    order_number: 6,
-    id_local_team: santa_clara._id,
-    id_visiting_team: cristo_rey._id,
-    date: '2022-07-16 16:30',
-    stadium: stadium_1._id,
-    local_team_final_score: 17,
-    visiting_team_final_score: 15,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
-  // const tournament_1_4_1 = await new match({
-  //     order_number: 5,
-  //     id_local_team: luque._id,
-  //     id_visiting_team: curda._id,
-  //     date: '2022-07-16 15:00',
-  //     stadium: heroes_de_curupayty._id,
-  //     local_team_final_score: ?,
-  //     visiting_team_final_score: ?,
-  //     local_team_points_earned: ?,
-  //     visiting_team_points_earned: ?,
-  // }).save()
-
-
-  // const tournament_1_4_1 = await new match({
-  //     order_number: 2,
-  //     id_local_team: santa_clara._id,
-  //     id_visiting_team: cristo_rey._id,
-  //     date: '2022-07-09 15:00',
-  //     stadium: heroes_de_curupayty._id,
-  //     local_team_final_score: 17,
-  //     visiting_team_final_score: 15,
-  //     local_team_points_earned: 3,
-  //     visiting_team_points_earned: 0,
-  // }).save()
-
-
-  const tournament_1_3_3 = await new match({
-    order_number: 4,
-    id_local_team: luque._id,
-    id_visiting_team: cristo_rey._id,
-    date: '2022-07-09 16:45',
-    stadium: stadium_2._id,
-    local_team_final_score: 12,
-    visiting_team_final_score: 20,
-    local_team_points_earned: 0,
-    visiting_team_points_earned: 3,
-  }).save()
-
-  const tournament_1_3_2 = await new match({
-    order_number: 3,
-    id_local_team: curda._id,
-    id_visiting_team: san_jose._id,
-    date: '2022-07-09 15:30',
-    stadium: stadium_3._id,
-    local_team_final_score: 13,
-    visiting_team_final_score: 13,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 3,
-  }).save()
-
-
-
-
-  const tournament_1_2_2 = await new match({
-    order_number: 3,
-    id_local_team: santa_clara._id,
-    id_visiting_team: curda._id,
-    date: '2022-07-03 15:00',
-    stadium: stadium_1._id,
-    local_team_final_score: 31,
-    visiting_team_final_score: 10,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
-  const tournament_1_2_1 = await new match({
-    order_number: 2,
-    id_local_team: san_jose._id,
-    id_visiting_team: luque._id,
-    date: '2022-07-03 15:00',
-    stadium: stadium_1._id,
-    local_team_final_score: 44,
-    visiting_team_final_score: 22,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
-
-  const tournament_1_1_1 = await new match({
-    order_number: 1,
-    id_local_team: santa_clara._id,
-    id_visiting_team: san_jose._id,
-    date: '2022-06-25 15:00',
-    stadium: stadium_2._id,
-    local_team_final_score: 23,
-    visiting_team_final_score: 14,
-    local_team_points_earned: 3,
-    visiting_team_points_earned: 0,
-  }).save()
-
+  /*
+    const match = require('../models/match')
+    const tournament_1_final = await new match({
+      order_number: 999,
+      id_local_team: san_jose._id,
+      id_visiting_team: curda._id,
+      date: '2022-09-10 17:30',
+      local_team_final_score: 13,
+      visiting_team_final_score: 21,
+      // local_team_points_earned: 3,
+      // visiting_team_points_earned: 0,
+    }).save()
+  
+    const tournament_1_1 = await new match({
+      order_number: 10,
+      id_local_team: curda._id,
+      id_visiting_team: luque_rugby._id,
+      date: '2022-09-03 00:00',
+      local_team_final_score: 62,
+      visiting_team_final_score: 14,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  
+    const tournament_1_2 = await new match({
+      order_number: 9,
+      id_local_team: san_jose._id,
+      id_visiting_team: arc._id,
+      date: '2022-09-03 00:00',
+      local_team_final_score: 34,
+      visiting_team_final_score: 14,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  
+  
+  
+  
+  
+    // const tournament_1_4_3 = await new match({
+    //     order_number: 7,
+    //     id_local_team: san_jose._id,
+    //     id_visiting_team: arc._id,
+    //     date: '2022-07-16 16:30',
+    //     stadium: cancha_luque._id,
+    //     local_team_final_score: ?,
+    //     visiting_team_final_score: ?,
+    //     local_team_points_earned: ?,
+    //     visiting_team_points_earned: ?,
+    // }).save()
+  
+    const tournament_1_4_2 = await new match({
+      order_number: 6,
+      id_local_team: santa_clara._id,
+      id_visiting_team: cristo_rey._id,
+      date: '2022-07-16 16:30',
+      stadium: stadium_1._id,
+      local_team_final_score: 17,
+      visiting_team_final_score: 15,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  
+    // const tournament_1_4_1 = await new match({
+    //     order_number: 5,
+    //     id_local_team: luque._id,
+    //     id_visiting_team: curda._id,
+    //     date: '2022-07-16 15:00',
+    //     stadium: heroes_de_curupayty._id,
+    //     local_team_final_score: ?,
+    //     visiting_team_final_score: ?,
+    //     local_team_points_earned: ?,
+    //     visiting_team_points_earned: ?,
+    // }).save()
+  
+  
+    // const tournament_1_4_1 = await new match({
+    //     order_number: 2,
+    //     id_local_team: santa_clara._id,
+    //     id_visiting_team: cristo_rey._id,
+    //     date: '2022-07-09 15:00',
+    //     stadium: heroes_de_curupayty._id,
+    //     local_team_final_score: 17,
+    //     visiting_team_final_score: 15,
+    //     local_team_points_earned: 3,
+    //     visiting_team_points_earned: 0,
+    // }).save()
+  
+  
+    const tournament_1_3_3 = await new match({
+      order_number: 4,
+      id_local_team: luque._id,
+      id_visiting_team: cristo_rey._id,
+      date: '2022-07-09 16:45',
+      stadium: stadium_2._id,
+      local_team_final_score: 12,
+      visiting_team_final_score: 20,
+      local_team_points_earned: 0,
+      visiting_team_points_earned: 3,
+    }).save()
+  
+    const tournament_1_3_2 = await new match({
+      order_number: 3,
+      id_local_team: curda._id,
+      id_visiting_team: san_jose._id,
+      date: '2022-07-09 15:30',
+      stadium: stadium_3._id,
+      local_team_final_score: 13,
+      visiting_team_final_score: 13,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 3,
+    }).save()
+  
+  
+  
+  
+    const tournament_1_2_2 = await new match({
+      order_number: 3,
+      id_local_team: santa_clara._id,
+      id_visiting_team: curda._id,
+      date: '2022-07-03 15:00',
+      stadium: stadium_1._id,
+      local_team_final_score: 31,
+      visiting_team_final_score: 10,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  
+    const tournament_1_2_1 = await new match({
+      order_number: 2,
+      id_local_team: san_jose._id,
+      id_visiting_team: luque._id,
+      date: '2022-07-03 15:00',
+      stadium: stadium_1._id,
+      local_team_final_score: 44,
+      visiting_team_final_score: 22,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  
+  
+    const tournament_1_1_1 = await new match({
+      order_number: 1,
+      id_local_team: santa_clara._id,
+      id_visiting_team: san_jose._id,
+      date: '2022-06-25 15:00',
+      stadium: stadium_2._id,
+      local_team_final_score: 23,
+      visiting_team_final_score: 14,
+      local_team_points_earned: 3,
+      visiting_team_points_earned: 0,
+    }).save()
+  */
 
   /*
   const a = require('../models/role')

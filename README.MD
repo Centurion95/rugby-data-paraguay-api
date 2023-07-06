@@ -1,26 +1,25 @@
-# Project Name
+# Rugby Data Paraguay
 
-Short description of your project.
+Backend project.
+
+Author: Rodrigo Centurión
 
 ## Table of Contents
 
 - [Installation](#installation)
 - [Usage](#usage)
-- [API Documentation](#api-documentation)
-- [Configuration](#configuration)
-- [Contributing](#contributing)
-- [License](#license)
+- [Versiones](#versiones)
 
 ## Installation
 
 1. Clone the repository:
 ```
-git clone https://github.com/your-username/project-name.git
+git clone https://github.com/Centurion95/rugby-data-paraguay-api
 ```
 
 2. Install dependencies:
 ```
-cd project-name
+cd rugby-data-paraguay-api
 npm install
 ```
 
@@ -37,35 +36,42 @@ npm start
 
 2. Open your web browser and navigate to `http://localhost:3000` to access the application.
 
-## API Documentation
+## Versiones
 
-API documentation and endpoints can be found in the [API Documentation](api-documentation.md) file.
+#### rc95 - 05/07/2023
+- Cambios en el `README`
 
-## Configuration
+#### rc95 - 16/06/2023
+- Se implementa `jsonwebtoken`
+- Se implementa un propotipo de `Login`
+- Se implementa:
+  - /api/estadios
 
-The following environment variables need to be configured in the `.env` file:
+#### rc95 - 09/06/2023
+- Se implementa:
+  - /api/jugadores
+  - /api/torneos
+  - /api/torneo_detalles
 
-- `PORT`: The port number for the server.
-- `DB_CONNECTION_STRING`: The connection string for the database.
-- ...
+#### rc95 - 08/06/2023
+- Se implementa:
+  - /api/clubes
+  - /api/tipos_contacto
+  - /api/tipos_identificador
+  - /api/personas
 
-## Contributing
+#### rc95 - 06/06/2023
+- Se implementa:
+  - /api/paises
+  - /api/estados
+  - /api/ciudades
 
-1. Fork the repository.
-2. Create a new branch:
-```
-git checkout -b feature/your-feature-name
-```
-3. Make changes and commit them:
-```
-git commit -m "Your commit message"
-```
-4. Push your changes to the branch:
-```
-git push origin feature/your-feature-name
-```
-5. Submit a pull request.
-
-## License
-
-[MIT License](LICENSE)
+#### rc95 - 03/06/2023
+- Primer commit
+- Prototipo de API REST
+- Estructura preparada para modelos de MongoDB
+- Se crea una función inicial para prepoblar la base
+- Estructura app - routes - controller
+- Se implementa:
+  - /api/continentes
+- Se crea el archivo `utils.js` para formateo de fechas

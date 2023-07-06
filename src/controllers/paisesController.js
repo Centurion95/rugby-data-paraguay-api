@@ -7,6 +7,7 @@ const thisController = {
       const documents = await Collection
         .find({ archived: false })
         .populate('id_continent', 'name')
+        // .select('_id name id_continent name') //rc95 23/06/2023 01:40 - pruebas
         .sort({ name: 1 })
         .exec()
 
