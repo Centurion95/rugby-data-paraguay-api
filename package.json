@@ -5,7 +5,7 @@
   "main": "src/app.js",
   "scripts": {
     "start": "nodemon src/app.js",
-    "vercel-build": "echo vercel-build"
+    "vercel-build": "echo vercelbuild"
   },
   "dependencies": {
     "cors": "^2.8.5",
