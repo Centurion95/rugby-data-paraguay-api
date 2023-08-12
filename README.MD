@@ -38,6 +38,9 @@ npm start
 
 ## Versiones
 
+#### rc95 - 12/08/2023 08:08
+- Solo usamos una variable para la BD en `.env`
+
 #### rc95 - 11/08/2023 23:50
 - Cambios para deploy en `vercel`
 

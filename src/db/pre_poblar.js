@@ -342,9 +342,9 @@ exports.ejecutar = async () => {
 
   //rc95 28/09/2022 22:55 - stadium
   const stadium = require('../models/stadium')
-  const stadium_1 = await new stadium({ name: 'cancha de curda', id_owner: curda._id, id_city: asuncion._id }).save()
-  const stadium_2 = await new stadium({ name: 'cancha de luque', id_owner: luque_rugby._id, id_city: luque._id }).save()
-  const stadium_3 = await new stadium({ name: 'cancha de san jose', id_owner: san_jose._id, id_city: limpio._id }).save()
+  const stadium_1 = await new stadium({ name: 'CURDA', id_owner: curda._id, id_city: asuncion._id }).save()
+  const stadium_2 = await new stadium({ name: 'LUQUE', id_owner: luque_rugby._id, id_city: luque._id }).save()
+  const stadium_3 = await new stadium({ name: 'SAN JOSE', id_owner: san_jose._id, id_city: limpio._id }).save()
 
 
   //rc95 28/09/2022 22:59 - tournament
