@@ -13,6 +13,10 @@ app.use(cors({ origin: "*" }))
 
 app.use(express.json())
 
+app.get('/api/test', (req, res) => {
+  res.send({ message: `Hola, esto es un test.` })
+})
+
 //rc95 15/06/2023 22:50 - jwt auth...
 const secretKey = process.env.JWT_SECRET
 

@@ -38,6 +38,9 @@ npm start
 
 ## Versiones
 
+#### rc95 - 11/08/2023 23:50
+- Cambios para deploy en `vercel`
+
 #### rc95 - 05/07/2023
 - Cambios en el `README`
 
