@@ -349,9 +349,40 @@ exports.ejecutar = async () => {
 
   //rc95 28/09/2022 22:59 - tournament
   const tournament = require('../models/tournament')
-  const tournament_1 = await new tournament({ name: 'Torneo Oficial 2022 - Primera', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
-  const tournament_2 = await new tournament({ name: 'Torneo clausura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
-  const tournament_3 = await new tournament({ name: 'Torneo apertura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  // const tournament_1 = await new tournament({ name: 'Torneo Oficial 2022 - Primera', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  // const tournament_2 = await new tournament({ name: 'Torneo clausura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  // const tournament_3 = await new tournament({ name: 'Torneo apertura 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+
+  //rc95 12/08/2023 01:15
+  const tournament_1 = await new tournament({ name: 'URP - Primera - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_2 = await new tournament({ name: 'URP - Intermedia - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_3 = await new tournament({ name: 'URP - Pre Intermedia - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_4 = await new tournament({ name: 'URP - Pre Intermedia Interior - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_5 = await new tournament({ name: 'URP - Femenino - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_6 = await new tournament({ name: 'URP - M18 - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_7 = await new tournament({ name: 'URP - M16 - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_8 = await new tournament({ name: 'URP - M14 - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+  const tournament_9 = await new tournament({ name: 'URP - M13 - Torneo Oficial 2023', id_sport: rugby._id, id_country: paraguay._id, year: 2023 }).save()
+
+  await new tournament({ name: 'URP - Primera - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - Intermedia - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - Pre Intermedia Interior - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - Femenino - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - M18 - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - Pre Intermedia - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - M16 - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - M14 - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+  await new tournament({ name: 'URP - M13 - Torneo Oficial 2022', id_sport: rugby._id, id_country: paraguay._id, year: 2022 }).save()
+
+  await new tournament({ name: 'URP - Primera - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - Intermedia - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - Pre Intermedia Interior - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - Femenino - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - M18 - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - Pre Intermedia - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - M16 - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - M14 - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
+  await new tournament({ name: 'URP - M13 - Torneo Oficial 2021', id_sport: rugby._id, id_country: paraguay._id, year: 2021 }).save()
 
 
   //rc95 28/09/2022 23:07 - match

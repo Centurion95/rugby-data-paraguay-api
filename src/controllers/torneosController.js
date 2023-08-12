@@ -77,6 +77,19 @@ const thisController = {
   //         res.status(500).send(error)
   //     }
   // },
+  get_all_by_year: async (req, res) => {
+    const year = req.params.year
+    try {
+      // const document = await Collection.findOne({ _id, id_user: req.user._id })
+      const documents = await Collection.find({ year, archived: false })
+      if (!documents) {
+        return res.status(404).send()
+      }
+      res.status(200).send(documents)
+    } catch (error) {
+      res.status(500).send(error)
+    }
+  },
 }
 
 module.exports = thisController 
