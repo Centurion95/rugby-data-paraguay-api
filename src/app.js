@@ -70,6 +70,8 @@ const torneosRouter = require('./routes/torneosRouter')
 const torneoDetallesRouter = require('./routes/torneoDetallesRouter')
 const estadiosRouter = require('./routes/estadiosRouter')
 
+const webVisitRouter = require('./routes/webVisitRouter') //rc95 26/08/2023 20:53
+
 // Route middleware
 app.use("/api/continentes", continentesRouter)
 app.use("/api/paises", paisesRouter)
@@ -86,6 +88,7 @@ app.use("/api/torneos", torneosRouter)
 app.use("/api/torneo_detalles", torneoDetallesRouter)
 app.use("/api/estadios", estadiosRouter)
 
+app.use("/api/web_visit", webVisitRouter)
 
 app.get('/*', (req, res) => {
   res.status(404).send()
