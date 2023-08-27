@@ -38,6 +38,9 @@ npm start
 
 ## Versiones
 
+#### rc95 - 23/08/2023 21:30
+- Cambios necesarios para el web_visit
+
 #### rc95 - 12/08/2023 08:08
 - Solo usamos una variable para la BD en `.env`
 

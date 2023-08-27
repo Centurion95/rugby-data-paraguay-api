@@ -12,7 +12,8 @@ const thisController = {
     }
   },
   insert_one: async (req, res) => {
-    const visitor_ip = req.ip
+    // const visitor_ip = req.ip //no funciona, retorna siempre "127.0.0.1"
+    const visitor_ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
     const visitor_user_agent = req.get('User-Agent')
 
     const document = new Collection({
