@@ -2,8 +2,6 @@ require('dotenv').config()
 require('./db/mongoose')
 const { getCurrentDateTime } = require('./utils/utils')
 
-const jwt = require('jsonwebtoken')
-
 const port = process.env.PORT || 3001
 const express = require('express')
 const app = express()
@@ -17,45 +15,10 @@ app.get('/api/test', (req, res) => {
   res.send({ message: `Hola, esto es un test.` })
 })
 
-//rc95 15/06/2023 22:50 - jwt auth...
-const secretKey = process.env.JWT_SECRET
-
-app.post('/login', (req, res) => {
-  const { username, password } = req.body
-
-  // Validación básica del usuario y contraseña
-  if (username === 'admin' && password === 'admin') {
-    // Generar el token
-    const token = jwt.sign({
-      username,
-      login: new Date()
-    }, secretKey)
-
-    res.send({ token })
-  } else {
-    res.status(401).send({ error: 'Credenciales inválidas' })
-  }
-})
-
-app.get('/protegido', (req, res) => {
-  const token = req.headers.authorization
-
-  if (!token) {
-    res.status(401).send({ error: 'Token no proporcionado' })
-  } else {
-    // Verificar y decodificar el token
-    jwt.verify(token, secretKey, (err, decoded) => {
-      if (err) {
-        res.status(401).send({ error: 'Token inválido' })
-      } else {
-        const username = decoded.username
-        res.send({ message: `Hola, ${username}! Esta es una ruta protegida.` })
-      }
-    })
-  }
-})
 
 // Import routes
+const loginRouter = require('./routes/loginRouter')
+
 const continentesRouter = require('./routes/continentesRouter')
 const paisesRouter = require('./routes/paisesRouter')
 const estadosRouter = require('./routes/estadosRouter')
@@ -72,7 +35,42 @@ const estadiosRouter = require('./routes/estadiosRouter')
 
 const webVisitRouter = require('./routes/webVisitRouter') //rc95 26/08/2023 20:53
 
+// Middleware para verificar el token JWT
+const jwt = require('jsonwebtoken')
+function verificarToken(req, res, next) {
+  const token = req.headers.authorization
+  if (!token) {
+    return res.status(401).send({ mensaje: 'Token no proporcionado' })
+  }
+
+  try {
+    const decoded = jwt.verify(token, process.env.JWT_SECRET)
+    req.username = decoded.username // Guarda la información del usuario en el objeto de solicitud
+    next() // Continúa con el siguiente middleware o la ruta
+  } catch (error) {
+    return res.status(401).json({ mensaje: 'Token inválido' })
+  }
+}
+
+// Aplica el middleware a todas las rutas bajo "/api/continentes"
+app.use('/api/continentes', verificarToken)
+app.use('/api/paises', verificarToken)
+app.use('/api/estados', verificarToken)
+app.use('/api/ciudades', verificarToken)
+app.use('/api/clubes', verificarToken)
+
+app.use('/api/tipos_contacto', verificarToken)
+app.use('/api/tipos_identificador', verificarToken)
+app.use('/api/personas', verificarToken)
+app.use('/api/jugadores', verificarToken)
+
+// app.use('/api/torneos', verificarToken)
+// app.use('/api/torneo_detalles', verificarToken)
+app.use('/api/estadios', verificarToken)
+
+
 // Route middleware
+app.use("/api/login", loginRouter)
 app.use("/api/continentes", continentesRouter)
 app.use("/api/paises", paisesRouter)
 app.use("/api/estados", estadosRouter)

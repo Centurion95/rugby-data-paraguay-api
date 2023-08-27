@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 const thisSchema = new mongoose.Schema({
-    // name: {
-    //     type: String,
-    //     required: true,
-    //     trim: true
-    // },
+    name: {
+        type: String,
+        required: true,
+        trim: true
+    },
     username: {
         type: String,
         required: true,
@@ -19,6 +19,10 @@ const thisSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Role'
+    },
+    es_admin: {
+        type: Boolean,
+        default: false
     },
     archived: {
         type: Boolean,
