@@ -4,6 +4,10 @@ const thisSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  order_number: { //rc95 08/09/2023 20:59
+    type: Number,
+    // required: true,
+  },
   name: {
     type: String,
     required: true,

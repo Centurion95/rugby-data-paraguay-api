@@ -38,6 +38,9 @@ npm start
 
 ## Versiones
 
+#### rc95 - 08/09/2023 21:37
+- Se implementa `order_number` en `tournament`
+
 #### rc95 - 27/08/2023 04:05
 - Se implementa el LOGIN
 - Se bloquean los endpoints vía middleware

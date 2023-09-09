@@ -5,6 +5,7 @@ const thisController = {
     try {
       const documents = await Collection
         .find({ archived: false })
+        .sort({ order_number: -1 })
 
       res.status(200).send(documents)
     } catch (error) {
@@ -41,7 +42,7 @@ const thisController = {
     }
 
     const updates = Object.keys(req.body)
-    const allowedUpdates = ['year', 'name', 'archived', 'archivedAt']
+    const allowedUpdates = ['year', 'order_number', 'name', 'archived', 'archivedAt']
     const isValidOperation = updates.every((update) => allowedUpdates.includes(update))
     if (!isValidOperation) {
       return res.status(404).send({ error: 'Invalid fields update!' })
@@ -81,7 +82,9 @@ const thisController = {
     const year = req.params.year
     try {
       // const document = await Collection.findOne({ _id, id_user: req.user._id })
-      const documents = await Collection.find({ year, archived: false })
+      const documents = await Collection
+        .find({ year, archived: false })
+        .sort({ order_number: -1 })
       if (!documents) {
         return res.status(404).send()
       }
