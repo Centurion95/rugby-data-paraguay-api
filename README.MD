@@ -38,6 +38,9 @@ npm start
 
 ## Versiones
 
+#### rc95 - 09/11/2023 10:40
+- Se agrega la sección VISITAS
+
 #### rc95 - 08/09/2023 21:37
 - Se implementa `order_number` en `tournament`
 
