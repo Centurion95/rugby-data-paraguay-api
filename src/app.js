@@ -33,7 +33,7 @@ const torneosRouter = require('./routes/torneosRouter')
 const torneoDetallesRouter = require('./routes/torneoDetallesRouter')
 const estadiosRouter = require('./routes/estadiosRouter')
 
-const webVisitRouter = require('./routes/webVisitRouter') //rc95 26/08/2023 20:53
+const webVisitRouter = require('./routes/webVisitRouter')
 
 // Middleware para verificar el token JWT
 const jwt = require('jsonwebtoken')
