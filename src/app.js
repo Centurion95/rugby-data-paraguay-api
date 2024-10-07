@@ -35,6 +35,8 @@ const estadiosRouter = require('./routes/estadiosRouter')
 
 const webVisitRouter = require('./routes/webVisitRouter')
 
+const contactosRouter = require('./routes/contactosRouter')
+
 // Middleware para verificar el token JWT
 const jwt = require('jsonwebtoken')
 function verificarToken(req, res, next) {
@@ -87,6 +89,8 @@ app.use("/api/torneo_detalles", torneoDetallesRouter)
 app.use("/api/estadios", estadiosRouter)
 
 app.use("/api/web_visit", webVisitRouter)
+
+app.use("/api/contactos", contactosRouter)
 
 app.get('/*', (req, res) => {
   res.status(404).send()
