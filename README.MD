@@ -54,6 +54,9 @@ npm start
 
 ## Versiones (desc)
 
+#### rc95 05/10/2024 22:04
+- Se agrega router y controller de `contacto`
+
 #### rc95 08/09/2024 02:04
 - Cambios en el README
 
