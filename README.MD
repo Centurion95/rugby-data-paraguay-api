@@ -54,6 +54,9 @@ npm start
 
 ## Versiones (desc)
 
+#### rc95 05/08/2025 03:10
+- Se agrega todo lo necesario para Cambiar Contraseña
+
 #### rc95 05/10/2024 22:04
 - Se agrega router y controller de `contacto`
 

@@ -1,7 +1,7 @@
 const { Router } = require('express')
 const thisRouter = Router()
 
-const { check_login } = require('../controllers/loginController.js')
+const { check_login, update } = require('../controllers/loginController.js')
 
 const jwt = require('jsonwebtoken')
 
@@ -23,5 +23,7 @@ thisRouter.get('/protegido', (req, res) => {
     }
   })
 })
+
+thisRouter.put('/:_id', update); //rc95 05/08/2025 02:47
 
 module.exports = thisRouter  
